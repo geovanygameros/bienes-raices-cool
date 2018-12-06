@@ -1,0 +1,20 @@
+$color-menu: #052D3E;
+$color-background: #F3F3F3;
+
+body{
+  background-color: $color-background;
+}
+
+nav.custom-navbar{
+  background-color: $color-menu;
+  li:hover{
+    background-color: rgba(92, 92, 92, 0.68);
+  }
+  li.active{
+    background-color: rgba(92, 92, 92, 0.68);
+  }
+}
+
+.no-margin{
+  margin: 0 !important;
+}

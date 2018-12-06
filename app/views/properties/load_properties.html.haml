@@ -1,0 +1,29 @@
+-@properties.each do |property|
+  %tr.tr-click.property-item{href:"/visits/#{property.id}"}
+    %td{width:'25%'}
+      -if ! property.property_pictures.blank?
+        %img.property-img{src:"#{property.property_pictures.first.picture.thumb.url}"}
+      -else
+        =image_tag 'default.jpg', class:'property-img'
+    %td{width:'75%'}
+      .property-content
+        .col.m9
+          .col.m12
+            .title
+              =property.title
+            .right
+
+          .col.m12
+            .brief
+              =truncate(property.content, length:120) # se corta el texto a los 120 caracteres
+        .col.m3.right-align
+          %p
+            %b=number_to_currency(property.price,unit: "$", separator: ".", delimiter: ",", format: "%u%n")
+          -if !property.rooms.nil?
+            %p="#{property.rooms} hab"
+          %p=property.bussiness_type
+
+:javascript
+  $("tr.tr-click").on('click', function () {
+    window.location = ($(this).attr("href"));
+  });

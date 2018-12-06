@@ -1,0 +1,93 @@
+.row
+  .col.s12
+    .card
+      .card-content
+        .row.no-margin
+          %form#properties-search-form{'data-remote':true, action:'/load_properties'}
+            .row
+              .col.l4.input-field
+                %input#properties-search-rooms{placeholder:'Número de habitaciones'}
+                %label.active{for:'properties-search-rooms'} Habitaciones
+              .col.l3.center
+                %button#properties-search-button.btn.btn-large.blue.waves-effect{type:'submit'}
+                  Buscar
+                  %i.material-icons.left
+                    search
+          #properties-wrapper
+            %table#properties-table.bordered.highlight
+              %thead
+              %tbody
+
+          .center-align
+            .preloader-wrapper.big.load-more.active{style:'display:none;'}
+              .spinner-layer.spinner-blue-only
+                .circle-clipper.left
+                  .circle
+                .gap-patch
+                  .circle
+                .circle-clipper.right
+        .circle
+
+:javascript
+
+  var properties_loaded;
+  var searchObject = {};
+
+  $("#properties-search-form").submit(function(e) {
+    searchProperties();
+    return false;
+  });
+  $("#properties-search-department").on('change', function() {
+    searchProperties();
+  });
+  $("#properties-search-status").on('change', function() {
+    searchProperties();
+  });
+  $("#properties-search-type").on('change', function() {
+    searchProperties();
+  });
+
+  $(document).ready(function(){
+    setPropertiesHeight();
+    searchProperties();
+
+  });
+
+  $('#properties-wrapper').scroll(function (){
+    if($(this)[0].scrollHeight - $(this).scrollTop() === $(this).outerHeight()) {
+      if (properties_loaded < #{@total_properties}) // Se cargan propiedades mientras no se hayan cargado todas
+        loadProperties();
+    }
+  });
+
+  function searchProperties() {
+    properties_loaded = 0;
+    searchObject.rooms = $("#properties-search-rooms").val();
+    console.log(searchObject);
+    loadProperties();
+
+  }
+
+  function loadProperties(){
+    $.ajax({
+      type:'GET',
+      url:'/load_properties',
+      chache:false,
+      data :{
+        properties_loaded: properties_loaded,
+        search_object : searchObject
+      },
+      beforeSend:function(){
+        $('.load-more').show();
+      },
+      success:function(html){
+        if(properties_loaded == 0){
+          $("#properties-table tbody").html(html);
+        }else{
+          $("#properties-table tbody").append(html);
+        }
+        $('.load-more').hide();
+        properties_loaded += 50;
+      }
+    });
+  }

@@ -1,0 +1,26 @@
+#properties-wrapper{
+  display: block;
+  overflow-y: scroll;
+}
+
+.tr-click{
+  cursor: pointer;
+}
+
+.property-item{
+
+}
+.property-content{
+  height: 150px;
+  .title{
+    color: #052D3E;
+  }
+  .brief{
+    font-size: 85%;
+    color: #515151;
+  }
+}
+
+.property-img{
+  height: 150px;
+}
