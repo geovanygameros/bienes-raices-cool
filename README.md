@@ -37,8 +37,9 @@ ejecuta el task llamado `update_properties`. Para ejecutar el task de forma manu
 rake update_properties
 ```
 
-La primera vez que se ejecuta el task puede tardar algunos minutos ya que descarga todas las imágenes
-del XML. ¡Por favor, se paciente!
+La primera vez que se ejecuta el task puede tardar algunos minutos, dependiendo de tu conexión a Internet, ya que descarga todas las imágenes
+del XML. ¡Por favor, sé paciente!
+
 
 Las próximas veces que se ejecute el task el tiempo será mucho menor, ya que sólo crea las propiedades nuevas y elimina (pone estatus de eliminado) las que ya no están en el XML.
 Lo mismo pasa con las imágenes. 
@@ -47,6 +48,8 @@ En la raiz del proyecto se encuentra un script de bash llamado `update_propertie
 ```
 ./update_properties.sh
 ```
+
+Nota: no es necesario esperar a que termine el task para usar iniciar el proyecto, puedes abrir otra terminal y continuar con los pasos siguientes.
 
 ### Actualización de datos automática
 Obviamente no queremos tener que ejecutar manualmente el task cada vez que deseemos que se actualice la información, por eso vamos a hacer uso de `cron`.
