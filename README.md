@@ -38,7 +38,7 @@ rake update_properties
 ```
 
 La primera vez que se ejecuta el task puede tardar algunos minutos ya que descarga todas las imágenes
-del XML.
+del XML. ¡Por favor, se paciente!
 
 Las próximas veces que se ejecute el task el tiempo será mucho menor, ya que sólo crea las propiedades nuevas y elimina (pone estatus de eliminado) las que ya no están en el XML.
 Lo mismo pasa con las imágenes. 
