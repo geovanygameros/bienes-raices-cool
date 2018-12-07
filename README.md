@@ -81,6 +81,8 @@ Una vez que completamos los pasos anteriores símplemente ejecutamos el comando 
 
 * Aun falta trabajar en la interfaz gráfica. pero se puede echar un vistazo a la idea general.
 
+* Si se necesita mayor flexibilidad con los objetos, una buena opción es usar mongoDB como manejador de bases de datos. Hay una gema que permite utilizar mongoDB con objetos de Ruby `mongoid`
+
 >Hay algo más importante que la lógica: la imaginación.
 >Alfred Hitchcock (1899-1980) 
 
