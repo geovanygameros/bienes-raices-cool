@@ -1,11 +1,5 @@
 class PropertiesController < ApplicationController
   def index
-    url = "http://www.stagingeb.com/feeds/d420256874ddb9b6ee5502b9d54e773d8316a695/trovit_MX.xml.gz"
-    stream = open(url, 'Accept-Encoding' => 'gzip')
-    data = Zlib::GzipReader.new(stream).read
-    doc = Nokogiri::XML(data)
-    properties = doc.xpath("//ad")
-    puts properties.first.css("picture_url").last.text
     @total_properties = Property.where.not(status: Property::DELETED).size
   end
 
