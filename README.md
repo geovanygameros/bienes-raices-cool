@@ -49,7 +49,7 @@ En la raiz del proyecto se encuentra un script de bash llamado `update_propertie
 ./update_properties.sh
 ```
 
-Nota: no es necesario esperar a que termine el task para usar iniciar el proyecto, puedes abrir otra terminal y continuar con los pasos siguientes.
+**Nota: no es necesario esperar a que termine el task para usar iniciar el proyecto, puedes abrir otra terminal y continuar con los pasos siguientes.**
 
 ### Actualización de datos automática
 Obviamente no queremos tener que ejecutar manualmente el task cada vez que deseemos que se actualice la información, por eso vamos a hacer uso de `cron`.
