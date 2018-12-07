@@ -11,7 +11,7 @@
 
 }
 .property-content{
-  height: 150px;
+  height: 100px;
   .title{
     color: #052D3E;
   }
@@ -22,5 +22,10 @@
 }
 
 .property-img{
-  height: 150px;
+  height: 100px;
+}
+
+.price{
+  font-size: 2em;
+  font-weight: 400;
 }

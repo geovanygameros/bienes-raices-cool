@@ -7,14 +7,50 @@ body{
 
 nav.custom-navbar{
   background-color: $color-menu;
-  li:hover{
-    background-color: rgba(92, 92, 92, 0.68);
-  }
-  li.active{
-    background-color: rgba(92, 92, 92, 0.68);
+  margin-bottom: 10px;
+  .brand-logo{
+    font-size: 120%;
+    padding-left: 1em;
+    .sign{
+      font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+      font-size: 60%;
+      font-weight: 300;
+    }
   }
 }
 
 .no-margin{
   margin: 0 !important;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 80% !important;
+}
+
+.config-breadcrumb {
+  background: none;
+  border: none;
+  .breadcrumb {
+    color: #2196f3 !important;
+    font-size: 120% !important;
+    &:before {
+      font-size: 120% !important;
+      color: #666 !important;
+    }
+    &:last-of-type{
+      color: #7a7a7a !important;
+    }
+  }
+}
+
+i{
+  vertical-align: middle;
+}
+
+.card .card-content .card-title{
+  color: #616161;
+  font-size: 160%;
+  margin-bottom: 1.5em !important;
 }

@@ -1,0 +1,58 @@
+%nav.config-breadcrumb.z-depth-0
+  .nav-wrapper
+    .row
+      .col.s12.m12.l12
+        =link_to root_path, class:'breadcrumb' do
+          Inicio
+        %a.breadcrumb{}
+          =truncate(@property.title, lenght:35)
+.row
+  .col.m7
+    .card
+      .card-content
+        .slider
+          %ul.slides
+            -@property.property_pictures.each do |picture|
+              %li
+                =image_tag picture.picture.url, class: 'materialboxed'
+
+  .col.m5
+    .card
+      .card-content
+        %p.flow-text=@property.title
+        %p.price.center.purple-text.text-darken-3=number_to_currency(@property.price,unit: "$", separator: ".", delimiter: ",", format: "%u%n")
+
+    .card
+      .card-content
+        .card-title Información general
+        -if !@property.property_type.blank?
+          %p
+            %i.material-icons home
+            =@property.property_type
+        -if !@property.rooms.blank?
+          %p
+            %i.material-icons hotel
+            =@property.rooms
+            Habitaciones
+        -if !@property.bussiness_type.blank?
+          %p
+            %i.material-icons payment
+            =@property.bussiness_type
+    .card
+      .card-content
+        .card-title
+          Contacto
+        .center
+          %button.btn.btn-large.blue{onclick:"M.toast({html: 'Se supone que le llama ;)'})"} Llamar al dueño
+
+.row
+  .card
+    .card-content
+      .card-title
+        Descripción
+      %p=@property.content
+:javascript
+  $(document).ready(function(){
+    $('.slider').slider({height: 500});
+    $('.materialboxed').materialbox();
+  });

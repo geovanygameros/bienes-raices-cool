@@ -10,6 +10,10 @@
   %body
     %nav.custom-navbar
       .nav-wrapper
-        %a.brand-logo{:href => "/", 'data-turbolinks':"false"} Bienes Raices Cool
+
+        %a.brand-logo{:href => "/"}
+          %i.material-icons home
+          Bienes Raices Cool
+          %span.sign by Geovany Gameros
     .container
       = yield

@@ -1,11 +1,11 @@
 -@properties.each do |property|
-  %tr.tr-click.property-item{href:"/visits/#{property.id}"}
-    %td{width:'25%'}
+  %tr.tr-click.property-item{href:"/properties/#{property.id}"}
+    %td{width:'20%'}
       -if ! property.property_pictures.blank?
         %img.property-img{src:"#{property.property_pictures.first.picture.thumb.url}"}
       -else
         =image_tag 'default.jpg', class:'property-img'
-    %td{width:'75%'}
+    %td{width:'80%'}
       .property-content
         .col.m9
           .col.m12

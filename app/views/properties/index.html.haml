@@ -5,9 +5,15 @@
         .row.no-margin
           %form#properties-search-form{'data-remote':true, action:'/load_properties'}
             .row
-              .col.l4.input-field
-                %input#properties-search-rooms{placeholder:'Número de habitaciones'}
+              .col.l3.input-field
+                %input#properties-search-rooms{placeholder:'Número de habitaciones', type:'number'}
                 %label.active{for:'properties-search-rooms'} Habitaciones
+              .col.l3.input-field
+                %input#properties-search-min-price{placeholder:'Precio mínimo', type:'number'}
+                %label.active{for:'properties-search-min-price'} Precio mínimo
+              .col.l3.input-field
+                %input#properties-search-max-price{placeholder:'Precio máximo', type:'number'}
+                %label.active{for:'properties-search-max-price'} Precio máximo
               .col.l3.center
                 %button#properties-search-button.btn.btn-large.blue.waves-effect{type:'submit'}
                   Buscar
@@ -63,6 +69,8 @@
   function searchProperties() {
     properties_loaded = 0;
     searchObject.rooms = $("#properties-search-rooms").val();
+    searchObject.max_price = $("#properties-search-max-price").val();
+    searchObject.min_price = $("#properties-search-min-price").val();
     console.log(searchObject);
     loadProperties();
 
