@@ -1,43 +1,6 @@
 #coding:utf-8
 desc "Actualiza las propiedades desde una url"
 task :update_properties => :environment do
-
-  #Como la url viene en gzip, primero hay que descomprimir el contenido para leer el xml completo
-  url = "http://www.stagingeb.com/feeds/d420256874ddb9b6ee5502b9d54e773d8316a695/trovit_MX.xml.gz"
-  stream = open(url, 'Accept-Encoding' => 'gzip')
-  data = Zlib::GzipReader.new(stream).read
-  doc = Nokogiri::XML(data)
-  objects = doc.xpath("//ad")
-
-  objects.each do |object|
-    # Se crea la propiedad
-    property = Property.new
-    property.content = object.css("content").text
-    property.property_type = object.css("property_type").text
-    property.bussiness_type = object.css("type").text if object.css("type")
-    property.title = object.css("title").text if object.css("title")
-    property.price = object.css("price").text if object.css("price")
-    property.rooms = object.css("rooms").text if object.css("rooms")
-    property.easy_broker_id = object.css("id").text
-
-
-    property.save
-    # Se cren las imagenes
-    object.css("picture_url").each do |image_object|
-      picture = property.property_pictures.new
-      picture.remote_picture_url = image_object.text
-      picture.picture_url = image_object.text
-      picture.save
-    end
-
-  end
-
-
-end
-
-
-desc "Actualiza las propiedades desde una url"
-task :replace => :environment do
   #Como la url viene en gzip, primero hay que descomprimir el contenido para leer el xml completo
   url = "http://www.stagingeb.com/feeds/d420256874ddb9b6ee5502b9d54e773d8316a695/trovit_MX.xml.gz"
   stream = open(url, 'Accept-Encoding' => 'gzip')
