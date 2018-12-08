@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: Esta casa tiene una vista increíble
+  easy_broker_id: es-4512
+  status: 1
+  property_type: Casa
+  title: Casa en Playa del Carmen
+  bussiness_type: Renta
+  rooms: 4
+  price: 30000
+
+two:
+  content: Ubicada en una de las mejores zonas de la ciudad
+  easy_broker_id: ed-8741
+  status: 1
+  property_type: Departamento
+  title: Departamento amueblado en La Condesa
+  bussiness_type: Venta
+  rooms: 2
+  price: 39000000
+
+three:
+  content: Cuenta con seguridad las 24 horas
+  easy_broker_id: ew-1241
+  status: 99
+  property_type: Departamento
+  title: Departamento para estudiante, cerca de la UNAM
+  bussiness_type: Renta
+  rooms: 1
+  price: 19000

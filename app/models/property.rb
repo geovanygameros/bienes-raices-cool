@@ -1,12 +1,10 @@
 class Property < ApplicationRecord
   has_many :property_pictures
-  before_create :set_status
+
+  # Se valida la presencia del id de Easy Broker ya que es el campo con el que se sincronizará la información del XML
+  validates :easy_broker_id, presence: true
 
   ACTIVE = 1
   DELETED = 99
-
-  def set_status
-    self.status = ACTIVE
-  end
 
 end
