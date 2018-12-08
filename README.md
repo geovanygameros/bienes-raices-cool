@@ -72,7 +72,7 @@ Guardamos el archivo y listo, el script se ejecutará a cada 8 horas. Si se dese
 
 ### Probar el código
 
-El proyecto incluye pruebas unigtarias para los controladores y modelos. Para ejecutar las pruebas hay que correr el comando `rails test`.
+El proyecto incluye pruebas unitarias para los controladores y modelos. Para ejecutar las pruebas hay que correr el comando `rails test`.
 
 El comando arrojará información sobre cuántas pruebas se hicieron, cuántas fallaron y cuántas pasaron exitosamente.
 
