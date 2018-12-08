@@ -70,6 +70,13 @@ Nosotros queremos que la actualización de los datos sea a cada 8 horas, para es
 
 Guardamos el archivo y listo, el script se ejecutará a cada 8 horas. Si se desea cambiar la frecuencia del script, sólo hay que modificar el crontab. Aquí hay información para programar tareas en crontab https://crontab.guru
 
+### Probar el código
+
+El proyecto incluye pruebas unigtarias para los controladores y modelos. Para ejecutar las pruebas hay que correr el comando `rails test`.
+
+El comando arrojará información sobre cuántas pruebas se hicieron, cuántas fallaron y cuántas pasaron exitosamente.
+
+### Uso de la aplicación
 Una vez que completamos los pasos anteriores símplemente ejecutamos el comando `rails s` y abrimos un navegador en la siguiente url: `http://localhost:3000`.
 
 ## Información extra
